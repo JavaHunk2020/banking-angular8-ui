@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "banking-ui"
+    }
+  },
+  "defaultProject": "banking-ui",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Customer Login Page
+    </h2>
+    <img src="assets/images/login.png" alt="Logo" style="height: 140px"/>
+     <br/>
+     <span th:utext="${error}" style="color: red;font-size: 18px;font-weight: bold;"  id="errorMessage">{{message}}</span>
+        <span th:utext="${message}" style="color: blue;font-size: 18px;font-weight: bold;"></span>
+    <div style="width: 70%">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" style="width: 60%;" class="form-control"  name="username"  [(ngModel)]="username"  id="username"  placeholder="Enter username">
+      </div>
+    
+      <div class="form-group">
+        <label for="password">Password:</label>
+         <input type="password" style="width: 60%;" class="form-control" [(ngModel)]="password"  name="password"  id="password"  placeholder="Enter password">
+      </div>
+      <button type="button" (click)="authUser();"  class="btn btn-primary" style="margin-right: 2px;">Login</button>
+      
+      <button type="reset" class="btn btn-danger" style="margin-right: 2px;">Reset</button>
+      
+      <a th:href="@{/customer/account/enquiry}" style="margin-right: 2px;"> 
+      <button type="button" class="btn btn-warning">Customer Enquiry</button>
+      </a>
+      
+      <a th:href="@{/customer/forget/password}" style="margin-right: 2px;">
+      <button type="button" class="btn btn-danger">Forget Password</button>
+      </a>
+      
+      <a th:href="@{/customer/app/status}" style="margin-right: 2px;">
+      <button type="button" class="btn btn-success">Enquiry Status</button>
+      </a>
+      
+       <a th:href="@{/customer/customerSearch}" style="margin-right: 2px;">
+      <button type="button" class="btn btn-success">Customer search</button>
+      </a>
+    </div>
+  </div>
