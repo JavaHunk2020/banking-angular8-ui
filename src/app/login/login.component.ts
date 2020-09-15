@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   public username:String;
   public password:String;
   public message:String;
+  
   constructor(private authService :AuthService,private router: Router) {
 
   }

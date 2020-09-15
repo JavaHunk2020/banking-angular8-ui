@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerEnquiry } from '../models/customer-enquiry.model';
 import { CustomerService } from '../services/customer.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-customer-enquiry',
@@ -24,8 +25,10 @@ export class CustomerEnquiryComponent implements OnInit {
 
   public processEnquiry() : void {
       console.log(this.customerEnquiry);
-      this.customerService.createEnquiry(this.customerEnquiry).subscribe(data=>{
-        this.router.navigate(['/login']);
+      //calling service layer
+       let promise:Observable<CustomerEnquiry>=this.customerService.createEnquiry(this.customerEnquiry);
+       promise.subscribe(data=>{
+                this.router.navigate(['/login']);
       });
   }
 
