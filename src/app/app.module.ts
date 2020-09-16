@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { CustomerhomeComponent } from './customerhome/customerhome.component';
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
 import { CustomerEnquiryComponent } from './customer-enquiry/customer-enquiry.component';
+import { CmenuComponent } from './cmenu/cmenu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomerEnquiryComponent } from './customer-enquiry/customer-enquiry.co
     LoginComponent,
     CustomerhomeComponent,
     EmployeeHomeComponent,
-    CustomerEnquiryComponent
+    CustomerEnquiryComponent,
+    CmenuComponent
   ],
   imports: [
     BrowserModule,

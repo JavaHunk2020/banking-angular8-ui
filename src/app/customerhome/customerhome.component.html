@@ -1,23 +1,6 @@
 <br/><br/>
 <div class="container">
-   <a th:href="@{/customer/addPayee}"> 
-  <button type="button" class="btn btn-primary">Add payee</button>
-  </a>
-
-<a th:href="@{/customer/pendingPayee}">
-<button type="button" class="btn btn-success">Pending payee</button>
-</a>
-
-<a th:href="@{/customer/registeredPayee}">
-<button type="button" class="btn btn-info">My registered payee</button>
-</a>
-
-<a th:href="@{/customer/fundTransfer}">
-<button type="button" class="btn btn-primary">Fund Transfer</button>
-</a>
-
- <a th:href="@{/customer/logout}"><button type="button" class="btn btn-warning">Logout</button></a>
- <br/>
+  <app-cmenu></app-cmenu>
   <img src="assets/images/customer_dashboard.jpg" alt="page"/>
    <span th:utext="${error}" style="color: red;font-size: 18px;"></span>
   <div style="width: 70%">

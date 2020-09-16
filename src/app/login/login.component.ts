@@ -1,24 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Auth } from '../models/auth.model';
 import { Router } from '@angular/router';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
 
   public username:String;
   public password:String;
   public message:String;
-  
-  constructor(private authService :AuthService,private router: Router) {
-
+  private subscription:any;
+  constructor(private authService :AuthService,private router: Router,private messageService:MessageService) {
+    this.subscription=this.messageService.getObserable().subscribe(data=>{
+      this.message=data;
+    });
   }
 
   ngOnInit(): void {
+    
+  }
+
+  ngOnDestroy(): void{
+    this.subscription.unsubscribe();
   }
 
   public authUser():void{
